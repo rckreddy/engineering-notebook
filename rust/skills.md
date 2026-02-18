@@ -191,13 +191,35 @@ When writing Rust code, apply the relevant patterns from that reference.
 | 123 | Dev-Dependencies | tempfile, pretty_assertions, insta, proptest |
 | 124 | Testing Checklist | What to test, which tool, where to put it |
 
+## Macros (Skills 125-140)
+**Source**: [macros_patterns.md](macros_patterns.md)
+
+| # | Skill | One-Liner |
+|---|-------|-----------|
+| 125 | macro_rules! Fundamentals | Basic syntax, fragment specifiers, multiple arms |
+| 126 | Repetition Patterns | `*`/`+`/`?` repetitions, trailing comma trick, nested repetitions |
+| 127 | Advanced macro_rules! | Recursive macros, TT munchers, push-down accumulation, `@` rules |
+| 128 | Hygiene & Debugging | Macro hygiene, `$crate`, `cargo expand`, `trace_macros!` |
+| 129 | Proc Macros Overview | Three types, crate setup, TokenStream in/out, syn/quote ecosystem |
+| 130 | Derive Macros | `#[derive(MyTrait)]`, DeriveInput parsing, handling generics |
+| 131 | Attribute Macros | `#[my_attr]` on items, parsing args, wrapping functions |
+| 132 | Function-like Proc Macros | `my_macro!(...)` for DSLs, compile-time validation |
+| 133 | syn Parsing | DeriveInput, custom Parse, visit/fold, error spans |
+| 134 | quote Generation | `#var` interpolation, `#(#iter)*` repetition, format_ident! |
+| 135 | Error Handling | `syn::Error`, collecting errors, trybuild, proc-macro-error |
+| 136 | Ecosystem Patterns | cfg_if!, bitflags!, LazyLock, json!, pin_project! |
+| 137 | Best Practices | When to avoid macros, extract logic, don't hide control flow |
+| 138 | Testing Macros | Unit tests, trybuild compile-fail, macrotest snapshots |
+| 139 | Complete Derive Walkthrough | Workspace setup, trait + derive, structs + enums + generics |
+| 140 | Decision Matrix | When to use each macro type vs generics/traits/const fn |
+
 ---
 
 ## TODO: Remaining Topics
 
 | Priority | Area | Est. Skills | Status |
 |:--------:|------|:-----------:|--------|
-| 1 | Macros (macro_rules!, proc macros, syn/quote) | 12-15 | Pending |
+| 1 | Macros (macro_rules!, proc macros, syn/quote) | 16 | Done |
 | 2 | Serde patterns (custom ser/de, tagged enums, zero-copy) | 8-10 | Pending |
 | 3 | Networking & HTTP (tokio I/O, axum, middleware) | 12-15 | Pending |
 | 4 | CLI patterns (clap, config, tracing/logging) | 8-10 | Pending |
@@ -216,4 +238,5 @@ When writing Rust code, apply the relevant patterns from that reference.
 
 | Date | Change |
 |------|--------|
+| 2026-02-17 | Added Macros section — Skills 125-140 |
 | 2026-02-16 | Initial version — Skills 1-124 index + TODO roadmap |
