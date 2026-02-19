@@ -213,6 +213,22 @@ When writing Rust code, apply the relevant patterns from that reference.
 | 139 | Complete Derive Walkthrough | Workspace setup, trait + derive, structs + enums + generics |
 | 140 | Decision Matrix | When to use each macro type vs generics/traits/const fn |
 
+## Serde Patterns (Skills 141-150)
+**Source**: [serde_patterns.md](serde_patterns.md)
+
+| # | Skill | One-Liner |
+|---|-------|-----------|
+| 141 | Serde Fundamentals | Derive `Serialize`/`Deserialize`, format-agnostic, data model |
+| 142 | Field Attributes | `rename_all`, `default`, `skip_serializing_if`, `flatten`, `alias` |
+| 143 | Enum Representations | External, internal (`tag`), adjacent (`tag`+`content`), untagged |
+| 144 | Custom Serialization | `serialize_with`, `with` modules, `serde_with` crate |
+| 145 | Custom Implementations | Manual `Serialize`/`Deserialize`, Visitor, `from`/`try_from`/`into` |
+| 146 | Zero-Copy Deserialization | `&'a str`, `Cow`, `#[serde(borrow)]`, from_str vs from_reader |
+| 147 | Complex Types | `transparent`, non-string keys, `bound`, remote derive, `Option<Option<T>>` |
+| 148 | serde_json::Value | `json!` macro, indexing, `flatten` + HashMap, typed ↔ Value |
+| 149 | Streaming & Large Data | `StreamDeserializer`, `to_writer`, NDJSON, from_reader vs from_str |
+| 150 | Best Practices | `deny_unknown_fields`, DTO pattern, versioning, roundtrip tests |
+
 ---
 
 ## TODO: Remaining Topics
@@ -220,7 +236,7 @@ When writing Rust code, apply the relevant patterns from that reference.
 | Priority | Area | Est. Skills | Status |
 |:--------:|------|:-----------:|--------|
 | 1 | Macros (macro_rules!, proc macros, syn/quote) | 16 | Done |
-| 2 | Serde patterns (custom ser/de, tagged enums, zero-copy) | 8-10 | Pending |
+| 2 | Serde patterns (custom ser/de, tagged enums, zero-copy) | 8-10 | Done |
 | 3 | Networking & HTTP (tokio I/O, axum, middleware) | 12-15 | Pending |
 | 4 | CLI patterns (clap, config, tracing/logging) | 8-10 | Pending |
 | 5 | Type system advanced (GATs, HRTBs, const generics) | 10-12 | Pending |
@@ -238,5 +254,6 @@ When writing Rust code, apply the relevant patterns from that reference.
 
 | Date | Change |
 |------|--------|
+| 2026-02-18 | Added Serde Patterns section — Skills 141-150 |
 | 2026-02-17 | Added Macros section — Skills 125-140 |
 | 2026-02-16 | Initial version — Skills 1-124 index + TODO roadmap |
