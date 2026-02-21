@@ -283,6 +283,24 @@ When writing Rust code, apply the relevant patterns from that reference.
 | 185 | Advanced Lifetimes | Elision rules, multiple lifetimes, `'static`, self-referential structs |
 | 186 | Decision Matrix | When to use generics vs dyn vs enum, associated vs generic, newtype vs alias |
 
+## Performance (Skills 187-198)
+**Source**: [performance_patterns.md](performance_patterns.md)
+
+| # | Skill | One-Liner |
+|---|-------|-----------|
+| 187 | Profiling Fundamentals | perf, flamegraph, DHAT — measure before optimizing |
+| 188 | Allocation-Aware Programming | Stack vs heap, Cow, SmallVec, pre-allocate with capacity |
+| 189 | Zero-Copy Patterns | Borrow don't clone, bytes::Bytes, memmap2, serde zero-copy |
+| 190 | Iterator & Collect Optimization | Zero-cost chains, size hints, extend vs push, filter_map |
+| 191 | Cache-Friendly Data Structures | SoA vs AoS, hot/cold splitting, Vec over LinkedList |
+| 192 | String Performance | &str over String, write! over format!, itoa/ryu, compact_str |
+| 193 | SIMD & Vectorization | Auto-vectorization, cargo asm, std::simd, wide crate |
+| 194 | Concurrency for Performance | Rayon par_iter, Amdahl's law, sharding, crossbeam |
+| 195 | Compile-Time Computation | const fn, lookup tables, include_bytes!, build.rs codegen |
+| 196 | Binary Size Optimization | cargo bloat, LTO, strip, panic=abort, feature flags |
+| 197 | Benchmarking Best Practices | iter_batched, black_box, baselines, CI benchmarks |
+| 198 | Anti-Patterns & Decision Matrix | Profile first, clone audit, hasher choice, optimize cycle |
+
 ---
 
 ## TODO: Remaining Topics
@@ -294,7 +312,7 @@ When writing Rust code, apply the relevant patterns from that reference.
 | 3 | Networking & HTTP (tokio I/O, axum, middleware) | 12-15 | Done |
 | 4 | CLI patterns (clap, config, tracing/logging) | 8-10 | Done |
 | 5 | Type system advanced (GATs, HRTBs, const generics) | 10-12 | Done |
-| 6 | Performance (profiling, SIMD, zero-copy, alloc-free) | 10-12 | Pending |
+| 6 | Performance (profiling, SIMD, zero-copy, alloc-free) | 10-12 | Done |
 | 7 | Workspace & build (cargo workspaces, features, build scripts) | 6-8 | Pending |
 | 8 | FFI & interop (C, Python/PyO3, WASM) | 10-12 | Pending |
 | 9 | Database patterns (sqlx, diesel, migrations) | 8-10 | Pending |
