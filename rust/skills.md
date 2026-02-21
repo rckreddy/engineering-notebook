@@ -229,6 +229,26 @@ When writing Rust code, apply the relevant patterns from that reference.
 | 149 | Streaming & Large Data | `StreamDeserializer`, `to_writer`, NDJSON, from_reader vs from_str |
 | 150 | Best Practices | `deny_unknown_fields`, DTO pattern, versioning, roundtrip tests |
 
+## Networking & HTTP (Skills 151-164)
+**Source**: [networking_patterns.md](networking_patterns.md)
+
+| # | Skill | One-Liner |
+|---|-------|-----------|
+| 151 | Tokio I/O Fundamentals | TcpListener, TcpStream, spawn per connection, graceful shutdown |
+| 152 | Framing & Codecs | `Framed<T, Codec>`, LinesCodec, custom Encoder/Decoder |
+| 153 | Tower Middleware | `Service` + `Layer` traits, ServiceBuilder, composable middleware |
+| 154 | Axum Routing & Handlers | Router, Path/Query/Json extractors, IntoResponse |
+| 155 | Axum State & DI | `State(pool)`, `with_state()`, `FromRef` for substates |
+| 156 | Axum Middleware | `Router::layer()`, `from_fn`, tower-http layers, ordering |
+| 157 | Axum Error Handling | Custom error → IntoResponse, Result<T, AppError>, JSON errors |
+| 158 | Custom Extractors | `FromRequestParts` / `FromRequest`, ordering rules, rejections |
+| 159 | reqwest HTTP Client | Reuse Client, builder pattern, error_for_status, streaming |
+| 160 | WebSockets | WebSocketUpgrade, split sender/receiver, broadcast, heartbeat |
+| 161 | wiremock Testing | MockServer, matchers, sequenced responses, verify requests |
+| 162 | Pooling & Timeouts | Connection pools, retry with backoff, circuit breaker |
+| 163 | TLS & Security | rustls, custom certs, mTLS, security headers |
+| 164 | Decision Matrix | axum default, graceful shutdown, health checks, anti-patterns |
+
 ---
 
 ## TODO: Remaining Topics
@@ -237,7 +257,7 @@ When writing Rust code, apply the relevant patterns from that reference.
 |:--------:|------|:-----------:|--------|
 | 1 | Macros (macro_rules!, proc macros, syn/quote) | 16 | Done |
 | 2 | Serde patterns (custom ser/de, tagged enums, zero-copy) | 8-10 | Done |
-| 3 | Networking & HTTP (tokio I/O, axum, middleware) | 12-15 | Pending |
+| 3 | Networking & HTTP (tokio I/O, axum, middleware) | 12-15 | Done |
 | 4 | CLI patterns (clap, config, tracing/logging) | 8-10 | Pending |
 | 5 | Type system advanced (GATs, HRTBs, const generics) | 10-12 | Pending |
 | 6 | Performance (profiling, SIMD, zero-copy, alloc-free) | 10-12 | Pending |
@@ -254,6 +274,7 @@ When writing Rust code, apply the relevant patterns from that reference.
 
 | Date | Change |
 |------|--------|
+| 2026-02-18 | Added Networking & HTTP section — Skills 151-164 |
 | 2026-02-18 | Added Serde Patterns section — Skills 141-150 |
 | 2026-02-17 | Added Macros section — Skills 125-140 |
 | 2026-02-16 | Initial version — Skills 1-124 index + TODO roadmap |
