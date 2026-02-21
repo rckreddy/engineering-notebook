@@ -249,6 +249,22 @@ When writing Rust code, apply the relevant patterns from that reference.
 | 163 | TLS & Security | rustls, custom certs, mTLS, security headers |
 | 164 | Decision Matrix | axum default, graceful shutdown, health checks, anti-patterns |
 
+## CLI Patterns (Skills 165-174)
+**Source**: [cli_patterns.md](cli_patterns.md)
+
+| # | Skill | One-Liner |
+|---|-------|-----------|
+| 165 | clap Derive API | `#[derive(Parser)]`, positional/optional/env args, doc-comment help |
+| 166 | Subcommands & Enums | `#[derive(Subcommand)]`, nested commands, `flatten` shared groups |
+| 167 | Validation & Value Types | `ValueEnum`, custom value parsers, mutually exclusive groups |
+| 168 | Layered Config | defaults → config file → env vars → CLI args with config-rs |
+| 169 | tracing Structured Logging | `info!(key = value)`, `#[instrument]`, `EnvFilter`, spans |
+| 170 | tracing Layers | Registry + multiple layers, JSON output, file appender, OpenTelemetry |
+| 171 | Progress & Interaction | indicatif progress bars, dialoguer prompts, stderr for UI |
+| 172 | Signal Handling | `ctrl_c()`, CancellationToken, graceful drain, RAII cleanup |
+| 173 | Testing CLIs | assert_cmd, trycmd snapshots, env/stdin injection, tempfile configs |
+| 174 | Best Practices | Exit codes, anyhow, shell completions, composability, anti-patterns |
+
 ---
 
 ## TODO: Remaining Topics
@@ -258,7 +274,7 @@ When writing Rust code, apply the relevant patterns from that reference.
 | 1 | Macros (macro_rules!, proc macros, syn/quote) | 16 | Done |
 | 2 | Serde patterns (custom ser/de, tagged enums, zero-copy) | 8-10 | Done |
 | 3 | Networking & HTTP (tokio I/O, axum, middleware) | 12-15 | Done |
-| 4 | CLI patterns (clap, config, tracing/logging) | 8-10 | Pending |
+| 4 | CLI patterns (clap, config, tracing/logging) | 8-10 | Done |
 | 5 | Type system advanced (GATs, HRTBs, const generics) | 10-12 | Pending |
 | 6 | Performance (profiling, SIMD, zero-copy, alloc-free) | 10-12 | Pending |
 | 7 | Workspace & build (cargo workspaces, features, build scripts) | 6-8 | Pending |
@@ -274,6 +290,7 @@ When writing Rust code, apply the relevant patterns from that reference.
 
 | Date | Change |
 |------|--------|
+| 2026-02-20 | Added CLI Patterns section — Skills 165-174 |
 | 2026-02-18 | Added Networking & HTTP section — Skills 151-164 |
 | 2026-02-18 | Added Serde Patterns section — Skills 141-150 |
 | 2026-02-17 | Added Macros section — Skills 125-140 |
