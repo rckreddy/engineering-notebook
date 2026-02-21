@@ -265,6 +265,24 @@ When writing Rust code, apply the relevant patterns from that reference.
 | 173 | Testing CLIs | assert_cmd, trycmd snapshots, env/stdin injection, tempfile configs |
 | 174 | Best Practices | Exit codes, anyhow, shell completions, composability, anti-patterns |
 
+## Advanced Type System (Skills 175-186)
+**Source**: [typesystem_patterns.md](typesystem_patterns.md)
+
+| # | Skill | One-Liner |
+|---|-------|-----------|
+| 175 | Generics Deep Dive | Bounds, `where` clauses, defaults, turbofish, const generics basics |
+| 176 | Associated Types vs Generics | One impl = associated, many impls = generic parameter |
+| 177 | GATs | `type Item<'a>` — lending iterators, self-referential returns |
+| 178 | HRTBs | `for<'a>` — closures and traits that work with any lifetime |
+| 179 | Const Generics | `<const N: usize>` — type-safe fixed-size abstractions |
+| 180 | Trait Objects | `dyn Trait` — vtable dispatch, object safety, heterogeneous collections |
+| 181 | impl Trait (RPIT/APIT) | Opaque types in argument and return position, RPITIT |
+| 182 | Type-Level Programming | PhantomData markers, typestate, compile-time enforcement |
+| 183 | Newtype Pattern | Type safety, orphan rule bypass, `repr(transparent)`, derive_more |
+| 184 | Closures & Fn Traits | Fn/FnMut/FnOnce hierarchy, capture modes, returning closures |
+| 185 | Advanced Lifetimes | Elision rules, multiple lifetimes, `'static`, self-referential structs |
+| 186 | Decision Matrix | When to use generics vs dyn vs enum, associated vs generic, newtype vs alias |
+
 ---
 
 ## TODO: Remaining Topics
@@ -275,7 +293,7 @@ When writing Rust code, apply the relevant patterns from that reference.
 | 2 | Serde patterns (custom ser/de, tagged enums, zero-copy) | 8-10 | Done |
 | 3 | Networking & HTTP (tokio I/O, axum, middleware) | 12-15 | Done |
 | 4 | CLI patterns (clap, config, tracing/logging) | 8-10 | Done |
-| 5 | Type system advanced (GATs, HRTBs, const generics) | 10-12 | Pending |
+| 5 | Type system advanced (GATs, HRTBs, const generics) | 10-12 | Done |
 | 6 | Performance (profiling, SIMD, zero-copy, alloc-free) | 10-12 | Pending |
 | 7 | Workspace & build (cargo workspaces, features, build scripts) | 6-8 | Pending |
 | 8 | FFI & interop (C, Python/PyO3, WASM) | 10-12 | Pending |
@@ -290,6 +308,7 @@ When writing Rust code, apply the relevant patterns from that reference.
 
 | Date | Change |
 |------|--------|
+| 2026-02-20 | Added Advanced Type System section — Skills 175-186 |
 | 2026-02-20 | Added CLI Patterns section — Skills 165-174 |
 | 2026-02-18 | Added Networking & HTTP section — Skills 151-164 |
 | 2026-02-18 | Added Serde Patterns section — Skills 141-150 |
